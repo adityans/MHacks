@@ -1,7 +1,5 @@
 <?php
 
-
-
 require 'database_connect.php';
 require_once 'src/facebook.php';
 
@@ -11,7 +9,7 @@ $facebook = new Facebook(array(
 ));
 
 $fbuser = $facebook->getUser();
-echo $fbuser;
+/*echo $fbuser;*/
 
 
 if (isset($_POST['gym']))
@@ -35,10 +33,10 @@ $sql = "INSERT INTO `users`(`fbuser`, `gym`, `timesweek`, `PhoneNum`, `lat`, `lo
 
 $result = mysql_query($sql, $db_server);
 
-	if (!$result) die ("fatal error/ access to db denied");
+if (!$result) die ("fatal error/ access to db denied");
 
-	header('Location: checkin.php');
-
-
+header('Location: http://localhost/MHacks/checkin.php');
 
 
+
+?>

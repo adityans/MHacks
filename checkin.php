@@ -1,7 +1,8 @@
 <?php
 
-require_once('src/facebook.php');
+
 require_once('database_connect.php');
+require_once('src/facebook.php');
 //script to calculate if checkins met users desired amount
 
 $facebook = new Facebook(array(
@@ -14,6 +15,10 @@ $facebook = new Facebook(array(
 
 $curUser = $facebook->getUser();
 
+if(!$curUser)
+{
+	die("It dies");
+}
 
 //set login credentials
 //$me = $facebook->api('/me');
@@ -65,6 +70,7 @@ if ($count !=$weekgoal)
  
  	$response = $facebook->api('me/feed', 'POST', $post);
  	print_r($response);
+
 
  	// Include the Twilio PHP library
 	require 'Services/Twilio.php';

@@ -6,8 +6,11 @@ require_once('database_connect.php');
 
 $facebook = new Facebook(array(
   'appId'  => '515352681892554',
-  'secret' => '3cb71a16143b35761b74092cf3aaebd4',
+  'secret' => '5ecffc0f15dc16855c133d2c8694cf43',
 ));
+
+
+    
 
 $curUser = $facebook->getUser();
 
@@ -48,7 +51,6 @@ foreach($checkin['data'] as $x)
 
 if ($count !=$weekgoal)
 {
-	$pageId = $curUser;
 	$accessToken = $facebook->getAccessToken();
  	$message = "I didnt go to the gym!";
 
@@ -64,7 +66,7 @@ if ($count !=$weekgoal)
  	$response = $facebook->api('me/feed', 'POST', $post);
  	print_r($response);
 
-	// Include the Twilio PHP library
+ 	// Include the Twilio PHP library
 	require 'Services/Twilio.php';
 
 	// Twilio REST API version
@@ -91,6 +93,7 @@ if ($count !=$weekgoal)
 	} catch (Exception $e) {
 		echo 'Error: ' . $e->getMessage();
 	}
+
 
 
 }

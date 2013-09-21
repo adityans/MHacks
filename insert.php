@@ -7,11 +7,17 @@ require_once 'src/facebook.php';
 
 $facebook = new Facebook(array(
   'appId'  => '515352681892554',
-  'secret' => '3cb71a16143b35761b74092cf3aaebd4',
+  'secret' => '5ecffc0f15dc16855c133d2c8694cf43',
 ));
 
+
+
+
+
+
 $fbuser = $facebook->getUser();
-echo $fbuser;
+
+
 
 
 if (isset($_POST['gym']))

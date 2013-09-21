@@ -1,3 +1,8 @@
+
+<html>
+<head></head>
+<body>
+
 <?php
 /**
  * Copyright 2011 Facebook, Inc.
@@ -20,40 +25,41 @@ require_once 'src/facebook.php';
 // Create our Application instance (replace this with your appId and secret).
 $facebook = new Facebook(array(
   'appId'  => '515352681892554',
-  'secret' => '3cb71a16143b35761b74092cf3aaebd4',
+  'secret' => '5ecffc0f15dc16855c133d2c8694cf43',
 ));
 
 
-$curUser = $facebook->getUser();
 
-$sql = "SELECT fbuser FROM users WHERE fbuser = '$curUser'";
-$result = mysql_query($sql);
 
-if ($result)
-{
- $params = array(
-  'scope' => 'read_stream, friends_likes, user_checkins, publish_actions',
-  'redirect_uri' => 'http://localhost/MHacks/checkin.php'
-);
-}
-else
-{
+//$result = mysql_query($sql);
+
+
   $params = array(
   'scope' => 'read_stream, friends_likes, user_checkins, publish_actions',
   'redirect_uri' => 'http://localhost/MHacks/profile.html'
   );
-}
+
 
 
 
 //set login credentials
 $loginUrl = $facebook->getLoginUrl($params);
 
+echo "<a href=$loginUrl> LOGIN WITH FACEBOOK </a>";
 
-        echo '<script type="text/javascript"> 
-                window.open("'. $loginUrl .'", "_self"); 
-                </script>';
-                exit;
+print_r($facebook->getUser());
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>
 

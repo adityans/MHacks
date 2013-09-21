@@ -55,9 +55,9 @@ if ($count !=$weekgoal)
  	$post = array(
  		'access_token' => $accessToken, 
  		'message' => $message,
- 		'name' => 'name',
+ 		'name' => 'get off your lazyass',
  		'description'=> 'description',
- 		'picture' => 'https://www.google.com/search?q=image+url&rlz=1C1ARAB_enUS495US495&um=1&ie=UTF-8&hl=en&tbm=isch&source=og&sa=N&tab=wi&authuser=0&ei=Upg9Uo3XOoiy2wXb_oCoDA#authuser=0&hl=en&q=couch+potato&tbm=isch&um=1&facrc=_&imgdii=_&imgrc=PfjLwNMnuaKdvM%3A%3BBM_NdbXS-sSHrM%3Bhttp%253A%252F%252Fwww.redfm.ie%252Fwp-content%252Fuploads%252F2013%252F08%252Fcouchpotato.gif%3Bhttp%253A%252F%252Fwww.redfm.ie%252Fnews%252Fcouch-potato-lifestyle-is-a-real-pain-in-the-neck%252F%3B428%3B360',
+ 		'picture' => 'http://www.digital-literacies.com/wp-content/uploads/2011/09/couch-potato-cat.jpeg',
  		'caption' =>'posted by the fitness app');
 
  

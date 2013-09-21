@@ -20,7 +20,7 @@
 		$call = $client->account->calls->create(
 			$phonenumber, // The number of the phone initiating the call
 			'2484100614', // The number of the phone receiving call
-			'http://localhost/MHacks/itstime.mp3' // The URL Twilio will request when the call is answered
+			'https://5563754a.ngrok.com/MHacks/playmp3.php' // The URL Twilio will request when the call is answered
 		);
 		echo 'Started call: ' . $call->sid;
 	} catch (Exception $e) {

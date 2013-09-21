@@ -23,18 +23,38 @@ $facebook = new Facebook(array(
   'secret' => '3cb71a16143b35761b74092cf3aaebd4',
 ));
 
-// Get User ID
-$params = array(
-  'scope' => 'read_stream, friends_likes',
-  'redirect_uri' => 'http://localhost/MHacks/profile.php'
+
+$curUser = $facebook->getUser();
+
+$sql = "SELECT fbuser FROM users WHERE fbuser = '$curUser'";
+$result = mysql_query($sql);
+
+if ($result)
+{
+ $params = array(
+  'scope' => 'read_stream, friends_likes, user_checkins, publish_actions',
+  'redirect_uri' => 'http://localhost/MHacks/checkin.php'
 );
+}
+else
+{
+  $params = array(
+  'scope' => 'read_stream, friends_likes, user_checkins, publish_actions',
+  'redirect_uri' => 'http://localhost/MHacks/profile.html'
+  );
+}
+
 
 
 //set login credentials
 $loginUrl = $facebook->getLoginUrl($params);
 
 
-echo "<a href= $loginUrl> LOGIN WITH FACEBOOK! </a>"
+        echo '<script type="text/javascript"> 
+                window.open("'. $loginUrl .'", "_self"); 
+                </script>';
+                exit;
+
 ?>
 
 

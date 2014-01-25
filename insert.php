@@ -15,8 +15,11 @@ $facebook = new Facebook(array(
 
 $fbuser = $facebook->getUser();
 
+if(!$fbuser)
+{
+	die("Insert Dies");
+}
 
-echo $fbuser;
 
 
 if (isset($_POST['gym']))
@@ -42,7 +45,7 @@ $result = mysql_query($sql, $db_server);
 
 if (!$result) die ("fatal error/ access to db denied");
 
-header('Location: http://localhost/MHacks/checkin.php');
+header('Location: checkin.php');
 
 
 

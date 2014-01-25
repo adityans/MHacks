@@ -1,4 +1,0 @@
-MHacks
-======
-
-MHacks Project

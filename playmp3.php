@@ -6,6 +6,6 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 
 <Response>
-	<Say>Karan Where the fuck are you?</Say>
+	<say> Rishi you are a loser </say>
 	<Play>https://5563754a.ngrok.com/MHacks/itstime.mp3</Play>
 </Response>

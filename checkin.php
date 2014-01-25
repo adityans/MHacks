@@ -17,6 +17,7 @@ $curUser = $facebook->getUser();
 
 if(!$curUser)
 {
+	echo "$curUser";
 	die("It dies");
 }
 
@@ -56,7 +57,11 @@ foreach($checkin['data'] as $x)
 
 if ($count !=$weekgoal)
 {
+	sleep(20);
+
 	$accessToken = $facebook->getAccessToken();
+
+
  	$message = "I didnt go to the gym!";
 
  	$post = array(
@@ -69,7 +74,7 @@ if ($count !=$weekgoal)
 
  
  	$response = $facebook->api('me/feed', 'POST', $post);
- 	print_r($response);
+
 
 
  	// Include the Twilio PHP library
@@ -92,15 +97,14 @@ if ($count !=$weekgoal)
 		// Initiate a new outbound call
 		$call = $client->account->calls->create(
 			$phonenumber, // The number of the phone initiating the call
-			'2484100614', // The number of the phone receiving call
-			'https://5563754a.ngrok.com/MHacks/playmp3.php' // The URL Twilio will request when the call is answered
+			'9788463740', // The number of the phone receiving call
+			'https://6a8b7fde.ngrok.com/MHacks/playmp3.php' // The URL Twilio will request when the call is answered
 		);
-		echo 'Started call: ' . $call->sid;
 	} catch (Exception $e) {
 		echo 'Error: ' . $e->getMessage();
 	}
 
-
+echo "THANK YOU FOR USING PFIT";
 
 }
 
